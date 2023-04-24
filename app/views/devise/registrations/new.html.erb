@@ -1,3 +1,4 @@
+<section class="page-container">
 <div class="auth-form">
   <h2>Sign up</h2>
 
@@ -5,12 +6,12 @@
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="field">
-      <%= f.label :name %><br />
+      <%= f.label :name %>
       <%= f.text_field :name, autofocus: true, required: true, autocomplete: "name" %>
     </div>
     
     <div class="field">
-      <%= f.label :email %><br />
+      <%= f.label :email %>
       <%= f.email_field :email, required: true, autocomplete: "email" %>
     </div>
 
@@ -18,12 +19,12 @@
       <%= f.label :password %>
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
+      <% end %>
       <%= f.password_field :password, required: true, autocomplete: "new-password" %>
     </div>
 
     <div class="field">
-      <%= f.label :password_confirmation %><br />
+      <%= f.label :password_confirmation %>
       <%= f.password_field :password_confirmation, required: true, autocomplete: "new-password" %>
     </div>
 
@@ -31,6 +32,8 @@
       <%= f.submit "Sign up" %>
     </div>
   <% end %>
-
-  <%= render "devise/shared/links" %>
+  <div class="link-container">
+    <%= render "devise/shared/links" %>
+  </div>
 </div>
+</section>
