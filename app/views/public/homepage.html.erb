@@ -1,9 +1,23 @@
 <h1>Kitchen Genie</h1>
 <nav>
-    <ul>
+    <ul style="display:flex;gap:1rem;list-style:none">
         <li><%= link_to "Food List", root_path %></li>
         <li><%= link_to "Recipe List", root_path %></li>
         <li><%= link_to "Public recipes", root_path %></li>
         <li><%= link_to "Shopping List", root_path %></li>
     </ul>
 </nav>
+
+<% if user_signed_in? %>
+    <div style="display:flex;flex-direction:column;align-items:center;">
+        <span>Current User: <%= current_user.name.upcase %></span>
+        <%= form_with url: destroy_user_session_path, method: :delete do |f| %>
+            <%= f.submit "Log Out" %>
+        <% end %>
+    </div>
+<% else %>
+    <div style="display:flex;flex-direction:column;align-items:center;">
+    <%= link_to 'Register', new_user_registration_path %>
+    <%= link_to 'Log In', new_user_session_path %>
+    </div>
+<% end %>
