@@ -1,0 +1,31 @@
+<section class="food-section">
+    <%= link_to 'Add Food', new_food_path, class: 'btn-primary' %>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Food</th>
+                <th>Measurement Unit</th>
+                <th>Unit Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @foods.each do |food|%>
+              <tr>
+                <td>
+                    <%= food.name %>
+                </td>
+                <td>
+                    <%= food.measurement_unit %>
+                </td>
+                <td>
+                    <%= food.price %>
+                </td>
+                <td>
+                    <%= button_to 'Delete', food_path(food), method: :delete, data: { confirm: 'Are you sure want to delete this food?' }, class: 'btn-danger' %>
+                </td>
+              </tr>
+            <% end %>
+        </tbody>
+    </table>
+</section>
