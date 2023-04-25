@@ -13,11 +13,11 @@
       </div>
       <div class="form-group">
         <%= f.label :price, class: "form-label" %>
-        <%= f.text_field :price, class: "form-control", required: true, step: "0.01" %>
+        <%= f.number_field :price, class: "form-control", required: true, step: "0.01" %>
       </div>
       <div class="form-group">
         <%= f.label :quantity, class: "form-label" %>
-        <%= f.text_field :quantity, class: "form-control", required: true %>
+        <%= f.number_field :quantity, class: "form-control", required: true %>
       </div>
       <div class="form-submit">
       <%= f.submit "Create Food", class: "btn-submit btn-primary"%>
