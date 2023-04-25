@@ -5,7 +5,10 @@
 }
 
 :root {
-  --primary: blueviolet;
+  --primary: #692be2;
+  --secondary: #bb98ff;
+  --light-blue: #d6d1ff;
+  --danger: #f44336;
 }
 
 body {
@@ -21,7 +24,59 @@ body {
 .page-title {
   color: #fff;
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   font-size: 2rem;
   font-family: 'Montserrat', sans-serif;
+}
+
+.secondary-btn {
+  background-color: #222;
+  border-radius: 4px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+  min-height: 44px;
+  min-width: 10px;
+  outline: none;
+  overflow: hidden;
+  padding: 9px 20px 8px;
+  text-decoration: none;
+}
+
+.secondary-btn:hover,
+.secondary-btn:focus {
+  opacity: 0.75;
+}
+
+.link {
+  color: #ffcd00;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s ease-out;
+}
+
+.link::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffcd00;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.2s ease-out;
+}
+
+.link:hover {
+  color: #ffffff;
+}
+
+.link:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
 }
