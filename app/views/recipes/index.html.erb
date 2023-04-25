@@ -6,6 +6,7 @@
         <h2 class="page-title">All <%= pluralize(@recipes.length, 'Recipe') %> by 👨‍🍳 <%= current_user.name %></h2>
     <% end %>
     <div class="recipes-list">
+    <%= link_to "Create New Recipe", new_recipe_path, class: "cta-btn" %>
     <% @recipes.each do |recipe| %>
         <article class="recipe-card">
             <header>

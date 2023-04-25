@@ -1,0 +1,14 @@
+<%= render 'public/header' %>
+<section class="page-container">
+
+    <% if flash[:error].present? %>
+        <div class="alert alert-danger">
+            <strong>Error:</strong> <%= flash[:error] %>
+        </div>
+    <% end %>
+    
+    <div class="recipe-form">
+        <h2>Create A New Recipe</h2>
+        <%= render 'form', recipe: @recipe %>
+    </div>
+</section>
