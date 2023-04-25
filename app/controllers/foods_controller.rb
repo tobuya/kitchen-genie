@@ -1,12 +1,12 @@
 class FoodsController < ApplicationController
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
 
   def index
-    @foods = Food.all
+    @foods = current_user.foods.all
   end
 
   def new
-    @food = Food.new
+    @food = current_user.foods.new
   end
 
   def create
@@ -27,6 +27,6 @@ class FoodsController < ApplicationController
   private
 
   def food_params
-    params.require(:food).permit(:name, :measurement_unit, :price)
+    params.require(:food).permit(:name, :measurement_unit, :price, :quantity)
   end
 end
