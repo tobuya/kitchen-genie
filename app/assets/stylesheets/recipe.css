@@ -212,7 +212,7 @@
   margin: 1rem 0;
 }
 
-.recipe-actions a {
+.recipe-action-btn {
   color: #fff;
   font-size: 1rem;
   text-decoration: none;
@@ -220,24 +220,25 @@
   padding: 0.75rem 1rem;
   border-radius: 0;
   border: none;
+  cursor: pointer;
   margin: 0 0.25rem;
   transition: all 0.3s ease;
 }
 
-.recipe-actions a {
+.recipe-action-btn {
   background-color: #9575cd;
 }
 
-.recipe-actions a:hover {
+.recipe-action-btn:hover {
   background-color: #7e57c2;
 }
 
-.recipe-actions .del-btn {
+.recipe-action-btn.del-btn {
   background-color: crimson;
 }
 
-.recipe-actions .del-btn:hover {
-  background-color: #e63946;
+.recipe-action-btn.del-btn:hover {
+  background-color: maroon;
 }
 
 /* Empty recipes page */

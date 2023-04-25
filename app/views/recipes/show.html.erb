@@ -40,6 +40,16 @@
         <h3>Description:</h3>
         <p><%= @recipe.description %></p>
       </div>
+
+      <div class="recipe-actions">
+      <%= link_to "Add Ingredient", new_food_path, class: "recipe-action-btn " %>
+      <%= link_to "Generate Shopping List", root_path, class: "recipe-action-btn " %>
+      <% if current_user == @recipe.user %>
+          <%= form_with model: @recipe, method: :delete do |f| %>
+              <%= f.submit "Delete Recipe", class: "recipe-action-btn del-btn" %>
+          <% end %>
+      <% end %>
+    </div>
     </section>
 
     <div>
@@ -53,12 +63,6 @@
       <% else %>
         <p>No foods added yet.</p>
       <% end %>
-    </div>
-
-    <div class="recipe-actions">
-      <%= link_to "Add Ingredient", new_food_path %>
-      <%= link_to "Generate Shopping List", root_path %>
-      <%= link_to "Delete Recipe", root_path, class: "del-btn" %>
     </div>
 </section>
 

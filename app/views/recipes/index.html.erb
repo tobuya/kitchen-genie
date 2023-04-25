@@ -19,7 +19,7 @@
                     <% end %>
                 </div>
                 <div class="recipe-action">
-                    <%= form_with model: [recipe], method: :delete do |f| %>
+                    <%= form_with model: recipe, method: :delete do |f| %>
                         <%= f.submit "Remove", class: "warning-btn" %>
                     <% end %>
                 </div>
