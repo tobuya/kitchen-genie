@@ -1,0 +1,29 @@
+<%= render 'public/header' %>
+<section class="food-section">
+    <h2 class="form-header">Add New Food</h2>
+    <div class="form-container">
+    <%= form_for @food do |f| %>
+      <div class="form-group">
+        <%= f.label :name, class: "form-label" %>
+        <%= f.text_field :name, class: "form-control", required: true %>
+      </div>
+      <div class="form-group">
+        <%= f.label :measurement_unit, class: "form-label" %>
+        <%= f.text_field :measurement_unit, class: "form-control", required: true %>
+      </div>
+      <div class="form-group">
+        <%= f.label :price, class: "form-label" %>
+        <%= f.number_field :price, class: "form-control", required: true, step: "0.01" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :quantity, class: "form-label" %>
+        <%= f.number_field :quantity, class: "form-control", required: true %>
+      </div>
+      <div class="form-submit">
+      <%= f.submit "Create Food", class: "btn-submit btn-primary"%>
+      </div>
+    <% end %>
+    </div>
+</section>
+<%= render 'public/footer' %>
+
