@@ -30,7 +30,7 @@
           <div class="toggle-container <%= @recipe.public ? "on" : "off" %>">
             <%= form_with model: @recipe do |form| %>
               <%= form.check_box :public, checked: !@recipe.public, hidden: true %>
-              <%= form.submit "" %>
+              <%= form.submit "", class: "toggle-btn" %>
             <% end %>
           </div>
         </div>
@@ -53,11 +53,11 @@
     </section>
 
     <section class="ingredient-table-container">
-      <h3>Ingredients:</h3>
       <% if @ingredients.any? %>
+      <h3>Ingredients:</h3>
         <%= render 'table', ingredients: @ingredients %>
       <% else %>
-        <p>No foods added yet!</p>
+        <h3>No foods added yet!</h3>
       <% end %>
     </section>
 </section>
