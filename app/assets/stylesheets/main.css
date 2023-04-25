@@ -116,7 +116,7 @@ body {
 }
 
 .link:hover {
-  color: #ffffff;
+  color: #fff;
 }
 
 .link:hover::before {

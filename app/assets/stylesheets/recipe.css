@@ -39,7 +39,7 @@
   display: inline-block;
 }
 
-.recipe-card-title:before {
+.recipe-card-title::before {
   content: '';
   position: absolute;
   bottom: -0.5rem;
@@ -52,7 +52,7 @@
   transition: all 0.2s ease-in-out 0s;
 }
 
-.recipe-card-title:hover:before {
+.recipe-card-title:hover::before {
   visibility: visible;
   transform: scaleX(1);
 }
