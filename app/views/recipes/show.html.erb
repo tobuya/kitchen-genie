@@ -42,7 +42,7 @@
       </div>
 
       <div class="recipe-actions">
-      <%= link_to "Add Ingredient", new_food_path, class: "recipe-action-btn " %>
+      <%= link_to "Add Ingredient", new_recipe_recipe_food_path(@recipe), class: "recipe-action-btn " %>
       <%= link_to "Generate Shopping List", root_path, class: "recipe-action-btn " %>
       <% if current_user == @recipe.user %>
           <%= form_with model: @recipe, method: :delete do |f| %>
@@ -52,18 +52,14 @@
     </div>
     </section>
 
-    <div>
-      <h3>Foods:</h3>
-      <% if @recipe.foods.any? %>
-        <ul>
-          <% @recipe.foods.each do |food| %>
-            <li><%= food.name %></li>
-          <% end %>
-        </ul>
+    <section class="ingredient-table-container">
+      <h3>Ingredients:</h3>
+      <% if @ingredients.any? %>
+        <%= render 'table', ingredients: @ingredients %>
       <% else %>
-        <p>No foods added yet.</p>
+        <p>No foods added yet!</p>
       <% end %>
-    </div>
+    </section>
 </section>
 
 

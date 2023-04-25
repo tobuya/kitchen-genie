@@ -1,0 +1,35 @@
+<table class="ingredient-table">
+    <thead>
+        <tr>
+            <th>Food</th>
+            <th>Quantity</th>
+            <th>Value</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% ingredients.each do |i|%>
+        <tr>
+            <td>
+                <%= i.food.name %>
+            </td>
+            <td>
+                <%= i.quantity %> <%= i.food.measurement_unit %>
+            </td>
+            <td>
+                <%= i.food.price %>
+            </td>
+            <td class="td-actions"> 
+                <%# <button type="button" class="table-action-btn" >Modify</button> %>
+                <% if current_user == i.recipe.user %>
+                    <%= form_with model: [i.recipe, i], method: :delete do |f| %>
+                        <%= f.submit "Remove", class: "table-action-btn" %>
+                    <% end %>
+                <% else %>
+                    No permission!
+                <% end %>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
