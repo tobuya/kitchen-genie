@@ -29,6 +29,7 @@ class RecipesController < ApplicationController
   def update
     @recipe = Recipe.find(params[:id])
     if @recipe.update(recipe_params)
+      flash[:success] = "Updated visibility to #{@recipe.public ? "public" : "private"}!"
       redirect_to recipe_path(@recipe)
     end
   end

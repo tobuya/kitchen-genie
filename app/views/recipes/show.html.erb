@@ -1,4 +1,13 @@
 <%= render 'public/header' %>
+
+<% flash.each do |key, value| %>
+  <% if key == "success" %>
+    <div class="alert alert-success"><%= value %></div>
+  <% elsif key == "error" %>
+    <div class="alert alert-danger"><%= value %></div>
+  <% end %>
+<% end %>
+
 <section class="page-container">
     <h2 class="page-title"><%= @recipe.name %></h2>
 
@@ -9,11 +18,11 @@
           <span><%= @recipe.user.name %></span>
         </div>
         <div class="recipe-time">
-          <span>Preparation Time: ⏱</span>
+          <span>Preparation: ⏱</span>
           <span><%= @recipe.preparation_time %> minutes</span>
         </div>
         <div class="recipe-time">
-          <span>Cooking Time: ⏰</span>
+          <span>Cooking: ⏰</span>
           <span><%= @recipe.cooking_time %> minutes</span>
         </div>
         <div>

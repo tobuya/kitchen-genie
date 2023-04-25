@@ -124,3 +124,29 @@ body {
   visibility: visible;
   transform: scaleX(1);
 }
+
+/* Alert message */
+
+.alert {
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+}
+
+.alert-success {
+  background-color: #28a745;
+}
+
+.alert-info {
+  background-color: #17a2b8;
+}
+
+.alert-warning {
+  background-color: #ffc107;
+}
+
+.alert-danger {
+  background-color: #dc3545;
+}
