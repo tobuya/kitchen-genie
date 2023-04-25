@@ -121,21 +121,3 @@
   font-size: 1.5rem;
   margin: 1rem 0;
 }
-
-.cta-btn {
-  background-color: #fff;
-  color: var(--primary);
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-decoration: none;
-  border: none;
-  border-radius: 0.5rem;
-  padding: 1rem 2rem;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-}
-
-.cta-btn:hover {
-  box-shadow: #121212 0 0 0 3px, transparent 0 0 0 0;
-}

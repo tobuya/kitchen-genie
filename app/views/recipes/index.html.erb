@@ -1,3 +1,4 @@
+<%= render 'public/header' %>
 <section class="page-container">
     <% if @recipes.empty? %>
         <%= render 'empty_recipes' %>
@@ -30,5 +31,4 @@
     <% end %>
     </div>
 </section>
-
-
+<%= render 'public/footer' %>
