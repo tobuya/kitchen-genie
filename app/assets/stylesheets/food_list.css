@@ -83,7 +83,8 @@ td {
   margin: 0 0 5px 0;
 }
 
-.form-control {
+.form-control,
+.form-group select {
   padding: 15px;
 }
 

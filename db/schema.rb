@@ -16,19 +16,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_25_053743) do
 
   create_table "foods", force: :cascade do |t|
     t.string "name"
-    t.integer "measurement_unit"
+    t.string "measurement_unit"
     t.integer "price"
     t.integer "quantity"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_foods_on_user_id"
-  end
-
-  create_table "foods_recipes", id: false, force: :cascade do |t|
-    t.bigint "recipe_id", null: false
-    t.bigint "food_id", null: false
-    t.integer "quantity"
   end
 
   create_table "recipes", force: :cascade do |t|
