@@ -1,23 +1,43 @@
-<h1>Kitchen Genie</h1>
-<nav>
-    <ul style="display:flex;gap:1rem;list-style:none">
-        <li><%= link_to "Food List", root_path %></li>
-        <li><%= link_to "Recipe List", recipes_path %></li>
-        <li><%= link_to "Public recipes", root_path %></li>
-        <li><%= link_to "Shopping List", root_path %></li>
+<header>
+  <nav>
+    <div class="logo">
+      <h1>Kitchen Genie</h1>
+    </div>
+    <ul class="nav-links">
+      <li><%= link_to "Food List", root_path, class: "link" %></li>
+      <li><%= link_to "Recipe List", recipes_path, class: "link" %></li>
+      <li><%= link_to "Public Recipes", root_path, class: "link" %></li>
+      <li><%= link_to "Shopping List", root_path, class: "link" %></li>
     </ul>
-</nav>
+     <% if user_signed_in? %>
+        <div class="user-info">
+          <span class="current-user">Current User: <%= current_user.name %></span>
+          <%= button_to "Log Out", destroy_user_session_path, method: :delete, class: "warning-btn" %>
+        </div>
+      <% else %>
+        <div class="user-actions">
+          <%= link_to 'Register', new_user_registration_path, class: "warning-btn" %>
+          <%= link_to 'Log In', new_user_session_path, class: "warning-btn" %>
+        </div>
+      <% end %>
+  </nav>
+</header>
 
-<% if user_signed_in? %>
-    <div style="display:flex;flex-direction:column;align-items:center;">
-        <span>Current User: <%= current_user.name.upcase %></span>
-        <%= form_with url: destroy_user_session_path, method: :delete do |f| %>
-            <%= f.submit "Log Out" %>
-        <% end %>
+<main class="hero">
+    <h2>Discover a world of delicious recipes</h2>
+    <p>Get inspired to cook with a collection of easy-to-follow recipes.</p>
+    <%= link_to "Get Started", new_recipe_path, class: "btn-primary" %>
+</main>
+
+<footer>
+  <div class="footer-content">
+    <div class="socials">
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+      <a href="#">LinkedIn</a>
     </div>
-<% else %>
-    <div style="display:flex;flex-direction:column;align-items:center;">
-    <%= link_to 'Register', new_user_registration_path %>
-    <%= link_to 'Log In', new_user_session_path %>
-    </div>
-<% end %>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2023 Kitchen Genie. All rights reserved.</p>
+  </div>
+</footer>
