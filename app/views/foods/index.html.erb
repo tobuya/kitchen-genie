@@ -1,5 +1,5 @@
-<section>
-    <%= link_to 'Add Food', new_food_path, class: 'btn btn-primary' %>
+<section class="food-section">
+    <%= link_to 'Add Food', new_food_path, class: 'btn-primary' %>
     <table class="table">
         <thead>
             <tr>
@@ -22,7 +22,7 @@
                     <%= food.price %>
                 </td>
                 <td>
-                    <%= button_to 'Delete', food_path(food), method: :delete, data: { confirm: 'Are you sure want to delete this food?' }, class: 'btn btn-danger' %>
+                    <%= button_to 'Delete', food_path(food), method: :delete, data: { confirm: 'Are you sure want to delete this food?' }, class: 'btn-danger' %>
                 </td>
               </tr>
             <% end %>
