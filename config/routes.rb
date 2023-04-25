@@ -4,5 +4,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "public#homepage"
+
+  resources :recipes, only: [:index, :new, :show, :create, :destroy]
   resources :foods, only: [:index, :new, :create, :destroy]
 end

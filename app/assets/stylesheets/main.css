@@ -1,11 +1,125 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+:root {
+  --primary: #692be2;
+  --secondary: #bb98ff;
+  --light-blue: #d6d1ff;
+  --danger: #f44336;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
+}
+
+.page-container {
+  background-color: var(--primary);
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.page-title {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Button styles  */
+
+.cta-btn {
+  display: block;
+  width: fit-content;
+  background-color: #fff;
+  color: var(--primary);
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  margin: 2rem 0;
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.cta-btn:hover {
+  box-shadow: #121212 0 0 0 3px, transparent 0 0 0 0;
+}
+
+.secondary-btn {
+  background-color: #222;
+  border-radius: 4px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+  min-height: 44px;
+  min-width: 10px;
+  outline: none;
+  overflow: hidden;
+  padding: 9px 20px 8px;
+  text-decoration: none;
+}
+
+.secondary-btn:hover,
+.secondary-btn:focus {
+  opacity: 0.75;
+}
+
+.warning-btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  font-size: 1em;
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--danger);
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.warning-btn:hover {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.link {
+  color: #ffcd00;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s ease-out;
+}
+
+.link::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffcd00;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.2s ease-out;
+}
+
+.link:hover {
+  color: #fff;
+}
+
+.link:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
 }

@@ -1,0 +1,123 @@
+.recipes-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.recipe-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.recipe-card:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.recipe-card > header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 15px;
+}
+
+.recipe-card-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: royalblue;
+  position: relative;
+  display: inline-block;
+}
+
+.recipe-card-title::before {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 100%;
+  height: 0.2rem;
+  background-color: var(--primary);
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.2s ease-in-out 0s;
+}
+
+.recipe-card-title:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+.recipe-card-title:hover {
+  color: var(--primary);
+}
+
+.recipe-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  font-size: 14px;
+  color: #666;
+}
+
+.recipe-meta span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 8px;
+  border-radius: 50px;
+  background-color: var(--light-blue);
+}
+
+.recipe-meta .recipe-author {
+  font-weight: 600;
+}
+
+.recipe-body {
+  width: 60%;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: aliceblue;
+  padding: 1rem;
+  border-radius: 4px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.recipe-body > p {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+/* Empty recipes page */
+
+.empty-recipes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  height: 50vh;
+}
+
+.empty-recipes h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.empty-recipes p {
+  color: #fff;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
