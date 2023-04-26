@@ -3,6 +3,8 @@ class Recipe < ApplicationRecord
   has_many :recipe_foods
   has_many :foods, through: :recipe_foods, source: :food
 
+  validates :name, presence: true
+
   def food_count
     foods.count
   end
