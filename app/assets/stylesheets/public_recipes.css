@@ -14,7 +14,6 @@
 
 .public-recipe-card {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     border: 1px solid #ddd;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -33,4 +32,11 @@
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
+  }
+
+  .main-cont {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 70vw;
   }
