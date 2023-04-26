@@ -9,7 +9,6 @@ RSpec.describe 'Recipe show page', type: :feature do
                    description: 'A classic dish that is easy to make.', public: true)
   end
 
-
   before do
     sign_in user
     visit recipe_path(recipe)

@@ -18,7 +18,6 @@ RSpec.describe 'Public recipes page', type: :feature do
   let!(:recipe_food1) { RecipeFood.create!(recipe: recipe1, food: food1, quantity: 500) }
   let!(:recipe_food2) { RecipeFood.create!(recipe: recipe1, food: food2, quantity: 1000) }
 
-
   before do
     sign_in user1
     visit public_recipes_path
