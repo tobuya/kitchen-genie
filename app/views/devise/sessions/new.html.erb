@@ -1,3 +1,4 @@
+<%= render 'public/header' %>
 <section class="page-container">
 <div class="auth-form">
   <h2>Log in</h2>
@@ -23,6 +24,8 @@
     <div class="actions">
       <%= f.submit "Log in" %>
     </div>
+    <%= link_to "Cancel", root_path, class: "secondary-btn" %>
+
   <% end %>
 
   <div class="link-container">

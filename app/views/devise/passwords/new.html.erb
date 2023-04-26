@@ -1,3 +1,4 @@
+<%= render 'public/header' %>
 <section class="page-container">
 <div class="auth-form">
   <h2>Forgot your password?</h2>
@@ -13,6 +14,8 @@
     <div class="actions">
       <%= f.submit "Send me reset password instructions" %>
     </div>
+    <%= link_to "Cancel", root_path, class: "secondary-btn" %>
+
   <% end %>
 
   <div class="link-container">

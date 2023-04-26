@@ -1,0 +1,31 @@
+<%= form_with model: @recipe do |form| %>
+
+  <div class="form-group">
+    <%= form.label "Recipe Name" %>
+    <%= form.text_field :name, required: true, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :preparation_time, "Preparation Time (In Minute)" %>
+    <%= form.number_field :preparation_time, min: 0, required: true, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :cooking_time, "Cooking Time (In Minute)" %>
+    <%= form.number_field :cooking_time, min: 0, required: true, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :description %>
+    <%= form.text_area :description, required: true, class: 'form-control' %>
+  </div>
+
+  <div>
+    <%= form.check_box :public, class: 'form-check' %>
+    <%= form.label :public, "Share this recipe to public" %>
+  </div>
+
+  <%= form.submit "Save" %>
+
+  <%= link_to 'Cancel', root_path, class: "secondary-btn" %>
+<% end %>

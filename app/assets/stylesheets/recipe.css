@@ -98,6 +98,146 @@
   white-space: pre-wrap;
 }
 
+/* Recipe Form  */
+
+.recipe-form {
+  background-color: #fff;
+  border-radius: 4px;
+  margin: auto;
+  padding: 2rem;
+  max-width: 800px;
+}
+
+.recipe-form > form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.recipe-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.recipe-form .form-control {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.recipe-form textarea {
+  resize: vertical;
+  font-family: inherit;
+}
+
+.recipe-form input[type='submit'] {
+  background-color: #4caf50;
+  color: white;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 700;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.recipe-form input[type='submit']:hover {
+  background-color: #3e8e41;
+}
+
+/* Recipe show page  */
+
+.recipe-detail {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 4px;
+}
+
+.recipe-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--light-blue);
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-header > div {
+  display: flex;
+  align-items: center;
+}
+
+.recipe-header > div span {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.toggle-container {
+  width: 60px;
+  height: 30px;
+}
+
+.toggle-container form,
+.toggle-btn {
+  width: 100%;
+  height: 100%;
+}
+
+.toggle-btn {
+  border: none;
+  background-color: transparent;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.toggle-container.on .toggle-btn {
+  background-image: url('on-button.png');
+}
+
+.toggle-container.off .toggle-btn {
+  background-image: url('off-button.png');
+}
+
+.recipe-actions {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.recipe-action-btn {
+  color: #fff;
+  font-size: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 0.75rem 1rem;
+  border-radius: 0;
+  border: none;
+  cursor: pointer;
+  margin: 0 0.25rem;
+  background-color: #9575cd;
+  transition: all 0.3s ease;
+}
+
+.recipe-action-btn:hover {
+  background-color: #7e57c2;
+}
+
+.recipe-action-btn.del-btn {
+  background-color: crimson;
+}
+
+.recipe-action-btn.del-btn:hover {
+  background-color: maroon;
+}
+
 /* Empty recipes page */
 
 .empty-recipes {

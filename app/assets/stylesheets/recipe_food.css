@@ -1,0 +1,120 @@
+.recipe-food-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.recipe-food-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+.recipe-food-card h3 {
+  background-color: var(--light-blue);
+  padding: 1rem;
+  flex: 1;
+  border-radius: 8px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.recipe-food-card form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.recipe-food-card .form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.recipe-food-card .form-group input {
+  width: 40%;
+  padding: 0.25rem 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: Courier, monospace;
+}
+
+.recipe-food-card .actions {
+  flex: 1;
+}
+
+.recipe-food-card input[type='submit'] {
+  background-color: var(--primary);
+  color: #fff;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.1) 0 1px 0;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  transition: all 0.3s ease-in;
+}
+
+.recipe-food-card input[type='submit']:hover {
+  background-color: var(--light-blue);
+  color: #333;
+}
+
+/* Recipe Food Table  */
+
+.ingredient-table-container h3 {
+  text-align: center;
+  margin: 2rem 0 1rem;
+  color: #fff;
+}
+
+.ingredient-table {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.ingredient-table thead {
+  background-color: #f2f2f2;
+}
+
+.ingredient-table th {
+  padding: 12px;
+  text-align: left;
+  font-weight: bold;
+  color: #333;
+}
+
+.ingredient-table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.ingredient-table tr:hover {
+  background-color: #f5f5f5;
+}
+
+.table-action-btn {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.table-action-btn:hover {
+  background-color: #0062cc;
+}

@@ -1,0 +1,14 @@
+<div class="recipe-food-card">
+    <h3><%= food.name %></h3>
+    <%= form_with model: [recipe, RecipeFood.new] do |form| %>
+        <%= form.number_field :food_id, value: food.id, hidden: true %>
+        <div class="form-group">
+            <%= form.label :quantity, "Quantity (#{food.measurement_unit})" %>
+            <%= form.number_field :quantity, min: 1, value: 0, required: true %>
+        </div>
+
+        <div class="actions">
+            <%= form.submit "Add to Recipe" %>
+        </div>
+    <% end %>
+</div>

@@ -41,7 +41,6 @@ body {
   text-transform: uppercase;
   text-decoration: none;
   border: none;
-  margin: 2rem 0;
   border-radius: 0.5rem;
   padding: 1rem 2rem;
   cursor: pointer;
@@ -58,16 +57,18 @@ body {
   border: none;
   color: #fff;
   cursor: pointer;
-  font-size: 16px;
   font-weight: 700;
-  line-height: 1.5;
   margin: 0;
+  text-align: center;
   min-height: 44px;
   min-width: 10px;
   outline: none;
   overflow: hidden;
-  padding: 9px 20px 8px;
+  padding: 0.5rem 2rem;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .secondary-btn:hover,
@@ -122,4 +123,30 @@ body {
 .link:hover::before {
   visibility: visible;
   transform: scaleX(1);
+}
+
+/* Alert message */
+
+.alert {
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+}
+
+.alert-success {
+  background-color: #28a745;
+}
+
+.alert-info {
+  background-color: #17a2b8;
+}
+
+.alert-warning {
+  background-color: #ffc107;
+}
+
+.alert-danger {
+  background-color: #dc3545;
 }
