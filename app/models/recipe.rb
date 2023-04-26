@@ -6,4 +6,5 @@ class Recipe < ApplicationRecord
   def food_quantities_by_name 
     recipe_foods.joins(:food).group('foods.name').sum(:quantity)
   end
+
 end

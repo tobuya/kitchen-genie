@@ -1,9 +1,42 @@
 <%= render 'header' %>
 
-<main class="hero">
-    <h2>Discover a world of delicious recipes</h2>
-    <p>Get inspired to cook with a collection of easy-to-follow recipes.</p>
-    <%= link_to "Browse Recipes", new_recipe_path, class: "cta-btn" %>
+<main>
+<section class="hero">
+    <div class="hero-container">
+        <h2>Discover a world of delicious recipes</h2>
+        <p>Get inspired to cook with a collection of easy-to-follow recipes.</p>
+        <div class="actions">
+            <%= link_to "Browse Recipes", new_recipe_path, class: "cta-btn" %>
+        </div>
+    </div>
+</section>
+
+<section class="features">
+    <h2 class="page-title">App Features</h2>
+    <div class="feature-grid">
+
+        <div class="feature">
+            <h3>📝 Create New Recipes</h3>
+            <p>Use our intuitive recipe creator to make your own recipes with step-by-step instructions, ingredient lists, and cooking tips.</p>
+        </div>
+
+
+        <div class="feature">
+            <h3>🍱 Share Recipes with Others</h3>
+            <p>Share your recipes with the KitchenGenie community. You can also browse and try recipes from other users.</p>
+        </div>
+
+
+        <div class="feature">
+            <h3>🛒 Generate Shopping List</h3>
+            <p>Create a shopping list based on the ingredients of the your recipes.</p>
+        </div>
+
+    </div>
+</section>
+
 </main>
+
+
 
 <%= render 'footer' %>

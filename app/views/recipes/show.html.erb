@@ -9,24 +9,24 @@
 <% end %>
 
 <section class="page-container">
-    <h2 class="page-title"><%= @recipe.name %></h2>
+    <h2 class="page-title"><%= %w[🍲 🍣 🍝 🍤 🥧 🍜].sample %> <%= @recipe.name %></h2>
 
     <section class="recipe-detail">
       <header class="recipe-header">
         <div>
-          <span>Created By: 👨‍🍳</span>
+          <span>Created By 👨‍🍳: </span>
           <span><%= @recipe.user.name %></span>
         </div>
         <div class="recipe-time">
-          <span>Preparation: ⏱</span>
+          <span>Preparation ⏱: </span>
           <span><%= @recipe.preparation_time %> minutes</span>
         </div>
         <div class="recipe-time">
-          <span>Cooking: ⏰</span>
+          <span>Cooking ⏰: </span>
           <span><%= @recipe.cooking_time %> minutes</span>
         </div>
         <div>
-          <span>Public:</span>
+          <span>Public 👀: </span>
           <div class="toggle-container <%= @recipe.public ? "on" : "off" %>">
             <%= form_with model: @recipe do |form| %>
               <%= form.check_box :public, checked: !@recipe.public, hidden: true %>
@@ -37,13 +37,13 @@
       </header>
 
       <div class="recipe-detail">
-        <h3>Description:</h3>
+        <h3>Description 📃: </h3>
         <p><%= @recipe.description %></p>
       </div>
 
       <div class="recipe-actions">
       <%= link_to "Add Ingredient", new_recipe_recipe_food_path(@recipe), class: "recipe-action-btn " %>
-      <%= link_to "Generate Shopping List", root_path, class: "recipe-action-btn " %>
+      <%= link_to "Generate Shopping List", shopping_list_path, class: "recipe-action-btn " %>
       <% if current_user == @recipe.user %>
           <%= form_with model: @recipe, method: :delete do |f| %>
               <%= f.submit "Delete Recipe", class: "recipe-action-btn del-btn" %>
@@ -54,7 +54,7 @@
 
     <section class="ingredient-table-container">
       <% if @ingredients.any? %>
-      <h3>Ingredients:</h3>
+      <h3>Ingredients 🥗:</h3>
         <%= render 'table', ingredients: @ingredients %>
       <% else %>
         <h3>No foods added yet!</h3>
