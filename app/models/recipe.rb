@@ -8,6 +8,11 @@ class Recipe < ApplicationRecord
   end
 
   def food_total_price
-    foods.sum(:price)
+    price = 0
+    recipe_foods.each do |recipe_food|
+      price += recipe_food.quantity * recipe_food.food.price
+    end
+
+    price
   end
 end
