@@ -7,4 +7,16 @@ class Recipe < ApplicationRecord
     recipe_foods.joins(:food).group('foods.name').sum(:quantity)
   end
 
+  def food_count
+    foods.count
+  end
+
+  def food_total_price
+    price = 0
+    recipe_foods.each do |recipe_food|
+      price += recipe_food.quantity * recipe_food.food.price
+    end
+
+    price
+  end
 end
