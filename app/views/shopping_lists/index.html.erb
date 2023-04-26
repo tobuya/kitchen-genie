@@ -1,14 +1,38 @@
-<h1>Shopping List</h1>
-<ul>
-  <% @shopping_list.each do |food_id, item| %>
-    <% if item[:quantity] > 0 %>
-      <li><%= item[:name] %> - <%= item[:quantity] %> - <%= item[:measurement_unit] %> Total: <%= item[:value] %> </li>
-    <% end %>
-  <% end %>
-</ul>
+<%= render 'public/header' %>
+<section class="page-container">
+<h2 class="page-title">Shopping List</h2>
 
-<ul>
-    <% @foods.each do |food| %>
-        <li><%= food.name %> - <%= food.quantity %> </li>
+<h4>Food Types to Buy:</h4>
+<p><%= @food_types %></p>
+
+<div class="total">
+  <h2>Total Value:</h2>
+  <p><span><%= @total_value %></span></p>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Food Item</th>
+      <th>Quantity</th>
+      <th>Unit</th>
+      <th>Price</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @shopping_list.each do |food_id, item| %>
+      <% if item[:quantity] > 0 %>
+        <tr>
+          <td><%= item[:name] %></td>
+          <td><%= item[:quantity] %></td>
+          <td><%= item[:measurement_unit] %></td>
+          <td><%= item[:price] %></td>
+          <td><%= item[:value] %></td>
+        </tr>
+      <% end %>
     <% end %>
-</ul>
+  </tbody>
+</table>
+</section>
+
