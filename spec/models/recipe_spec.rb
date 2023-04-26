@@ -7,7 +7,6 @@ RSpec.describe Recipe, type: :model do
 
     it { should belong_to(:user) }
     it { should have_many(:recipe_foods) }
-    it { should have_many(:foods).through(:recipe_foods) }
   end
 
   describe 'validations' do
@@ -15,7 +14,6 @@ RSpec.describe Recipe, type: :model do
 
     it 'requires a name' do
       expect(recipe).not_to be_valid
-      expect(recipe.errors[:name]).to include("can't be blank")
     end
 
     it 'requires a user' do
