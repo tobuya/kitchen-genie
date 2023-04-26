@@ -1,0 +1,38 @@
+<%= render 'public/header' %>
+<section class="page-container">
+<h2 class="page-title">🛒 Shopping List</h2>
+
+
+<table class="shopping-list-table">
+  <caption><%= pluralize(@food_types, 'Food Type') %> To Buy</caption>
+  <thead>
+    <tr>
+      <th>Food Item</th>
+      <th>Quantity</th>
+      <th>Unit</th>
+      <th>Price</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @shopping_list.each do |food_id, item| %>
+      <% if item[:quantity] > 0 %>
+        <tr>
+          <td><%= item[:name] %></td>
+          <td><%= item[:quantity] %></td>
+          <td><%= item[:measurement_unit] %></td>
+          <td><%= item[:price] %></td>
+          <td>$ <%= item[:value] %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="4"><strong>Total Value:</strong></td>
+      <td>$ <%= @shopping_list.values.map { |i| i[:value] }.sum %></td>
+    </tr>
+  </tfoot>
+</table>
+</section>
+

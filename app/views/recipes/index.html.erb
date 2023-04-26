@@ -4,32 +4,32 @@
         <%= render 'empty_recipes' %>
     <% else %>
         <h2 class="page-title">All <%= pluralize(@recipes.length, 'Recipe') %> by 👨‍🍳 <%= current_user.name %></h2>
-    <% end %>
-    <div class="recipes-list">
-    <%= link_to "Create New Recipe", new_recipe_path, class: "cta-btn" %>
-    <% @recipes.each do |recipe| %>
-        <article class="recipe-card">
-            <header>
-                <h3><%= link_to recipe.name, recipe_path(recipe), class: "recipe-card-title" %></h3>
-                <div class="recipe-meta">
-                    <span> ⏰ Prep: <%= recipe.preparation_time %> Min</span>
-                    <span> ⏲ Cook: <%= recipe.cooking_time %> Min</span>
-                    <% if recipe.public %>
-                        <span>👀 Public </span>
-                    <% end %>
+        <section class="recipes-list">
+        <%= link_to "Create New Recipe", new_recipe_path, class: "cta-btn" %>
+        <% @recipes.each do |recipe| %>
+            <div class="recipe-card">
+                <header>
+                    <h3><%= link_to recipe.name, recipe_path(recipe), class: "recipe-card-title" %></h3>
+                    <div class="recipe-meta">
+                        <span> ⏰ Prep: <%= recipe.preparation_time %> Min</span>
+                        <span> ⏲ Cook: <%= recipe.cooking_time %> Min</span>
+                        <% if recipe.public %>
+                            <span>👀 Public </span>
+                        <% end %>
+                    </div>
+                    <div class="recipe-action">
+                        <%= form_with model: recipe, method: :delete do |f| %>
+                            <%= f.submit "Remove", class: "warning-btn" %>
+                        <% end %>
+                    </div>
+                </header>
+                <div class="recipe-body">
+                    <h3>Description</h3>
+                    <p><%= recipe.description %></p>
                 </div>
-                <div class="recipe-action">
-                    <%= form_with model: recipe, method: :delete do |f| %>
-                        <%= f.submit "Remove", class: "warning-btn" %>
-                    <% end %>
-                </div>
-            </header>
-            <div class="recipe-body">
-                <h3>Description</h3>
-                <p><%= recipe.description %></p>
             </div>
-        </article>
+        <% end %>
+        </section>
     <% end %>
-    </div>
 </section>
 <%= render 'public/footer' %>
