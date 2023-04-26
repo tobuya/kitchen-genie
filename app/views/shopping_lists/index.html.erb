@@ -1,0 +1,14 @@
+<h1>Shopping List</h1>
+<ul>
+  <% @shopping_list.each do |food_id, item| %>
+    <% if item[:quantity] > 0 %>
+      <li><%= item[:name] %> - <%= item[:quantity] %> - <%= item[:measurement_unit] %> Total: <%= item[:value] %> </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<ul>
+    <% @foods.each do |food| %>
+        <li><%= food.name %> - <%= food.quantity %> </li>
+    <% end %>
+</ul>

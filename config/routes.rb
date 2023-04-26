@@ -9,4 +9,6 @@ Rails.application.routes.draw do
     resources :recipe_foods, only: [:new, :create, :destroy], path: "ingredient"
   end
   resources :foods, only: [:index, :new, :create, :destroy]
+
+  get '/shopping_list', to: 'shopping_lists#index', as: 'shopping_list'
 end
