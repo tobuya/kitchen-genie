@@ -1,0 +1,17 @@
+<%= render 'public/header' %>
+<section class="public-recipes-container">
+    <h1 class="public-recipes-title">Public Recipes</h1>
+    <% @recipes.each do |recipe| %>
+      <main class="public-recipe-card">
+        <div class="public-recipe-name">
+          <h2><%= link_to recipe.name, recipe_path(recipe), class: "link hover" %></h2>
+          <p>By: <%= recipe.user.name %></p>
+        </div>
+        <div>
+          <p>Total foods items: <%= recipe.food_count %></p>
+          <p>Total price: <%= number_to_currency(recipe.food_total_price) %></p>
+        </div>
+      </main>
+    <% end %>
+</section>
+<%= render 'public/footer' %>
