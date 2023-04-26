@@ -30,7 +30,7 @@
   <tfoot>
     <tr>
       <td colspan="4"><strong>Total Value:</strong></td>
-      <td>$ <%= @total_value %></td>
+      <td>$ <%= @shopping_list.values.map { |i| i[:value] }.sum %></td>
     </tr>
   </tfoot>
 </table>

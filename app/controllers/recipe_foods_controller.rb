@@ -1,4 +1,6 @@
 class RecipeFoodsController < ApplicationController
+  before_action :authenticate_user!
+
   def new
     @foods = Food.select('DISTINCT on (name) *')
     @recipe = Recipe.find(params[:recipe_id])

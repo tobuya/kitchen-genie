@@ -30,7 +30,7 @@
           <div class="toggle-container <%= @recipe.public ? "on" : "off" %>">
             <%= form_with model: @recipe do |form| %>
               <%= form.check_box :public, checked: !@recipe.public, hidden: true %>
-              <%= form.submit "", class: "toggle-btn" %>
+              <%= form.submit "", class: "toggle-btn", disabled: @recipe.user != current_user %>
             <% end %>
           </div>
         </div>
@@ -42,7 +42,9 @@
       </div>
 
       <div class="recipe-actions">
-      <%= link_to "Add Ingredient", new_recipe_recipe_food_path(@recipe), class: "recipe-action-btn " %>
+      <% if current_user == @recipe.user %>
+        <%= link_to "Add Ingredient", new_recipe_recipe_food_path(@recipe), class: "recipe-action-btn " %>
+      <% end %>
       <%= link_to "Generate Shopping List", shopping_list_path, class: "recipe-action-btn " %>
       <% if current_user == @recipe.user %>
           <%= form_with model: @recipe, method: :delete do |f| %>
