@@ -83,6 +83,7 @@ test:
 #
 production:
   <<: *default
-  database: kitchen_genie_production
-  username: kitchen_genie
-  password: <%= ENV["KITCHEN_GENIE_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  # database: kitchen_genie_production
+  # username: kitchen_genie
+  # password: <%= ENV["KITCHEN_GENIE_DATABASE_PASSWORD"] %>
