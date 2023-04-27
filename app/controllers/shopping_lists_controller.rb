@@ -2,12 +2,12 @@ class ShoppingListsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    # Select all recipes of current user
+    # Select all recipes of current user 
     @recipes = Recipe.includes(:foods).where(user_id: current_user.id)
     @shopping_list = {}
 
     @recipes.each do |recipe|
-      recipe.foods.each do |food|
+      recipe.foods.select('DISTINCT on (name) *').each do |food|
         # Initialize food data if not in shopping list yet
         @shopping_list[food.name] ||= { name: food.name, quantity: 0, measurement_unit: food.measurement_unit,
                                         price: food.price, value: 0 }
