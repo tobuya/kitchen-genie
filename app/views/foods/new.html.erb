@@ -1,0 +1,30 @@
+<%= render 'public/header' %>
+<section class="food-section">
+    <h2 class="form-header">Add New Food</h2>
+    <div class="form-container">
+    <%= form_for @food do |f| %>
+      <div class="form-group">
+        <%= f.label :name, class: "form-label" %>
+        <%= f.text_field :name, class: "form-control", required: true %>
+      </div>
+      <div class="form-group">
+        <%= f.label :measurement_unit, class: "form-label" %>
+        <%= f.select :measurement_unit, ["grams", 'kilograms', 'pounds', 'pieces'], class: "form-control", required: true %>
+      </div>
+      <div class="form-group">
+        <%= f.label :price, class: "form-label" %>
+        <%= f.number_field :price, class: "form-control", required: true, step: "0.01" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :quantity, class: "form-label" %>
+        <%= f.number_field :quantity, class: "form-control", required: true %>
+      </div>
+      <div class="form-submit">
+        <%= f.submit "Save", class: "btn-submit"%>
+        <%= link_to 'Cancel', root_path, class: "secondary-btn btn-cancel" %>
+      </div>
+    <% end %>
+    </div>
+</section>
+<%= render 'public/footer' %>
+

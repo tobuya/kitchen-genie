@@ -1,0 +1,26 @@
+<%= render 'public/header' %>
+<section class="public-recipes-container">
+    <h1 class="public-recipes-title">Public Recipes</h1>
+    <% if @recipes.empty? %>
+      <div class="list-empty-page">
+        <p>No one has shared any recipes yet! Share your amazing recipes with the community.</p>
+        <%= link_to "Your Recipes", recipes_path, class: "cta-btn" %>
+        <%= link_to "Back to Home", root_path, class: "secondary-btn" %>
+      </div>
+    <% end %>
+    <main class="main-cont">
+      <% @recipes.each do |recipe| %>
+        <div class="public-recipe-card">
+          <div class="public-recipe-name">
+            <h2><%= link_to recipe.name, recipe_path(recipe), class: "link hover" %></h2>
+            <p>By: <%= recipe.user.name %></p>
+          </div>
+          <div>
+            <p>Total foods items: <%= recipe.food_count %></p>
+            <p>Total price: <%= number_to_currency(recipe.food_total_price) %></p>
+          </div>
+        </div>
+      <% end %>
+    </main>
+</section>
+<%= render 'public/footer' %>
