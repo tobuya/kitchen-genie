@@ -2,7 +2,7 @@ class ShoppingListsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    # Select all recipes of current user 
+    # Select all recipes of current user
     @recipes = Recipe.includes(:foods).where(user_id: current_user.id)
     @shopping_list = {}
 
