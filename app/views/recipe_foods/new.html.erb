@@ -3,8 +3,10 @@
 <h2 class="page-title">Add Ingredient to <i><%= @recipe.name %></i></h2>
 
 <% if @foods.empty? %>
-    <p>You haven't added any food yet!</p>
-    <%= link_to "Add New Food", new_food_path, class: "link" %>
+    <div class="list-empty-page">
+        <p>You haven't added any food yet!</p>
+        <%= link_to "Add New Food", new_food_path, class: "cta-btn" %>
+    </div>
 <% else %>
     <div class="recipe-food-list">
     <% @foods.each do |food| %>

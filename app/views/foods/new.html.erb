@@ -20,7 +20,8 @@
         <%= f.number_field :quantity, class: "form-control", required: true %>
       </div>
       <div class="form-submit">
-      <%= f.submit "Create Food", class: "btn-submit btn-primary"%>
+        <%= f.submit "Save", class: "btn-submit"%>
+        <%= link_to 'Cancel', root_path, class: "secondary-btn btn-cancel" %>
       </div>
     <% end %>
     </div>
