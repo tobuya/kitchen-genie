@@ -5,7 +5,7 @@
   justify-content: flex-start;
   padding-top: 2.5%;
   align-items: center;
-  height: 100vh;
+  min-height: 70vh;
   font-family: Arial, Helvetica, sans-serif;
   background-color: var(--primary);
 }

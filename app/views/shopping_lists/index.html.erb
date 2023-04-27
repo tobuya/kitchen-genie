@@ -3,42 +3,43 @@
 <h2 class="page-title">🛒 Shopping List</h2>
 
 <% if @food_types.zero? %>
-<div class="list-empty-page">
-  <p>Your shopping list is currently empty. Create a new recipe or add ingredients to your recipes.</p>
-  <%= link_to "Your Recipes", recipes_path, class: "cta-btn" %>
-  <%= link_to "Back to Home", root_path, class: "secondary-btn" %>
-</div>
+  <div class="list-empty-page">
+    <p>Your shopping list is currently empty. Create a new recipe or add ingredients to your recipes.</p>
+    <%= link_to "Your Recipes", recipes_path, class: "cta-btn" %>
+    <%= link_to "Back to Home", root_path, class: "secondary-btn" %>
+  </div>
 <% else %>
-<table class="shopping-list-table">
-  <caption><%= pluralize(@food_types, 'Food Type') %> To Buy</caption>
-  <thead>
-    <tr>
-      <th>Food Item</th>
-      <th>Quantity</th>
-      <th>Unit</th>
-      <th>Price</th>
-      <th>Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @shopping_list.each do |food_id, item| %>
-      <% if item[:quantity] > 0 %>
-        <tr>
-          <td><%= item[:name] %></td>
-          <td><%= item[:quantity] %></td>
-          <td><%= item[:measurement_unit] %></td>
-          <td><%= item[:price] %></td>
-          <td>$ <%= item[:value] %></td>
-        </tr>
+  <table class="shopping-list-table">
+    <caption><%= pluralize(@food_types, 'Food Type') %> To Buy</caption>
+    <thead>
+      <tr>
+        <th>Food Item</th>
+        <th>Quantity</th>
+        <th>Unit</th>
+        <th>Price</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @shopping_list.each do |food_id, item| %>
+        <% if item[:quantity] > 0 %>
+          <tr>
+            <td><%= item[:name] %></td>
+            <td><%= item[:quantity] %></td>
+            <td><%= item[:measurement_unit] %></td>
+            <td><%= item[:price] %></td>
+            <td>$ <%= item[:value] %></td>
+          </tr>
+        <% end %>
       <% end %>
-    <% end %>
-  </tbody>
-  <tfoot>
-    <tr>
-      <td colspan="4"><strong>Total Value:</strong></td>
-      <td>$ <%= @shopping_list.values.map { |i| i[:value] }.sum %></td>
-    </tr>
-  </tfoot>
-</table>
-</section>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="4"><strong>Total Value:</strong></td>
+        <td>$ <%= @shopping_list.values.map { |i| i[:value] }.sum %></td>
+      </tr>
+    </tfoot>
+  </table>
 <% end %>
+</section>
+<%= render 'public/footer' %>

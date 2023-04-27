@@ -1,5 +1,13 @@
 <%= render 'public/header' %>
 <section class="food-section">
+    <h2 class="page-title">Your Food List</h2>
+    <% if @foods.empty? %>
+        <div class="list-empty-page">
+            <p>You haven't added any food yet!</p>
+            <%= link_to 'Add Food', new_food_path, class: 'cta-btn' %>
+            <%= link_to 'Back to Home', root_path, class: 'secondary-btn' %>
+        </div>
+    <% else %>
     <%= link_to 'Add Food', new_food_path, class: 'btn-primary' %>
     <table class="table">
         <thead>
@@ -27,11 +35,12 @@
                     <%= food.price %>
                 </td>
                 <td>
-                    <%= button_to 'Delete', food_path(food), method: :delete, data: { confirm: 'Are you sure want to delete this food?' }, class: 'btn-danger' %>
+                    <%= button_to 'Delete', food_path(food), method: :delete, data: { confirm: 'Are you sure want to delete this food?' }, class: 'warning-btn' %>
                 </td>
               </tr>
             <% end %>
         </tbody>
     </table>
+    <% end %>
 </section>
 <%= render 'public/footer' %>

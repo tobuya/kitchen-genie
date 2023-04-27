@@ -18,7 +18,7 @@ body {
 .page-container {
   background-color: var(--primary);
   padding: 2rem;
-  min-height: 100vh;
+  min-height: 70vh;
 }
 
 .page-title {
@@ -123,6 +123,27 @@ body {
 .link:hover::before {
   visibility: visible;
   transform: scaleX(1);
+}
+
+/* List empty page  */
+
+.list-empty-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  color: #fff;
+  min-height: 50vh;
+  padding: 2rem 1rem;
+}
+
+.list-empty-page > p {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 1rem 2rem;
+  text-align: center;
 }
 
 /* Alert message */

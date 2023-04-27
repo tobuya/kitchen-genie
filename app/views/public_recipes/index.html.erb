@@ -1,6 +1,13 @@
 <%= render 'public/header' %>
 <section class="public-recipes-container">
     <h1 class="public-recipes-title">Public Recipes</h1>
+    <% if @recipes.empty? %>
+      <div class="list-empty-page">
+        <p>No one has shared any recipes yet! Share your amazing recipes with the community.</p>
+        <%= link_to "Your Recipes", recipes_path, class: "cta-btn" %>
+        <%= link_to "Back to Home", root_path, class: "secondary-btn" %>
+      </div>
+    <% end %>
     <main class="main-cont">
       <% @recipes.each do |recipe| %>
         <div class="public-recipe-card">
