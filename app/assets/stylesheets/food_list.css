@@ -11,6 +11,11 @@
   overflow: hidden;
 }
 
+.food-btn-bar {
+  padding: 1rem;
+  margin: 0 0 2rem;
+}
+
 .btn-primary {
   align-self: flex-end;
   margin: 0 15% 1.25% 0;

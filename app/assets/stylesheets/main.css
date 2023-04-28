@@ -226,3 +226,9 @@ td {
   font-weight: bold;
   text-align: right;
 }
+
+@media (max-width: 768px) {
+  .page-container {
+    padding: 0.5rem;
+  }
+}
