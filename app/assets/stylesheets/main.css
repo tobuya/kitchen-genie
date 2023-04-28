@@ -5,10 +5,13 @@
 }
 
 :root {
-  --primary: #692be2;
-  --secondary: #bb98ff;
+  --primary: #6c6488;
+  --secondary: aliceblue;
   --light-blue: #d6d1ff;
-  --danger: #f44336;
+  --aqua: #6bbaa7;
+  --danger: #e24e42;
+  --gold: #fba100;
+  --dark: #3c3c3c;
 }
 
 body {
@@ -19,6 +22,7 @@ body {
   background-color: var(--primary);
   padding: 2rem;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 .page-title {
@@ -35,7 +39,7 @@ body {
   display: block;
   width: fit-content;
   background-color: #fff;
-  color: var(--primary);
+  color: var(--gold);
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -52,7 +56,7 @@ body {
 }
 
 .secondary-btn {
-  background-color: #222;
+  background-color: var(--dark);
   border-radius: 4px;
   border: none;
   color: #fff;
@@ -69,11 +73,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.2s;
 }
 
 .secondary-btn:hover,
 .secondary-btn:focus {
-  opacity: 0.75;
+  background-color: #121212;
 }
 
 .warning-btn {
@@ -97,7 +102,7 @@ body {
 }
 
 .link {
-  color: #ffcd00;
+  color: var(--gold);
   text-decoration: none;
   position: relative;
   transition: color 0.2s ease-out;
@@ -110,7 +115,7 @@ body {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #ffcd00;
+  background-color: var(--gold);
   visibility: hidden;
   transform: scaleX(0);
   transition: all 0.2s ease-out;
@@ -161,13 +166,69 @@ body {
 }
 
 .alert-info {
-  background-color: #17a2b8;
+  background-color: var(--aqua);
 }
 
 .alert-warning {
-  background-color: #ffc107;
+  background-color: var(--gold);
 }
 
 .alert-danger {
-  background-color: #dc3545;
+  background-color: var(--danger);
+}
+
+/* Table design  */
+
+.responsive-table {
+  width: 95%;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.211);
+  overflow-x: auto;
+}
+
+.responsive-table table,
+th,
+td {
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.responsive-table table {
+  width: 100%;
+  background-color: #fff;
+}
+
+.responsive-table th {
+  background-color: var(--aqua);
+  font-size: 1.1em;
+  color: #fff;
+}
+
+.responsive-table tr:nth-child(even) {
+  background-color: var(--secondary);
+}
+
+.responsive-table tr:hover {
+  background-color: var(--light-blue);
+}
+
+.responsive-table td {
+  border: solid 1px #ccc;
+}
+
+.responsive-table td.right {
+  text-align: right;
+}
+
+.responsive-table tfoot td {
+  border-top: 1px solid #ddd;
+  font-weight: bold;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .page-container {
+    padding: 0.5rem;
+  }
 }

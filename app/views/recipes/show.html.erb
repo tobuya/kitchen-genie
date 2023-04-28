@@ -9,21 +9,21 @@
 <% end %>
 
 <section class="page-container">
-    <h2 class="page-title"><%= %w[🍲 🍣 🍝 🍤 🥧 🍜].sample %> <%= @recipe.name %></h2>
+    <h2 class="page-title"><span class="feature-icon"><%= %w[🍲 🍣 🍝 🍤 🥧 🍜].sample %></span> <%= @recipe.name %></h2>
 
     <section class="recipe-detail">
       <header class="recipe-header">
         <div>
-          <span>Created By 👨‍🍳: </span>
-          <span><%= @recipe.user.name %></span>
+          <span class="meta-label">Created By</span>
+          <span>👨‍🍳: <%= @recipe.user.name %></span>
         </div>
-        <div class="recipe-time">
-          <span>Preparation ⏱: </span>
-          <span><%= @recipe.preparation_time %> minutes</span>
+        <div>
+          <span class="meta-label">Preparation</span>
+          <span>⏱: <%= @recipe.preparation_time %> minutes</span>
         </div>
-        <div class="recipe-time">
-          <span>Cooking ⏰: </span>
-          <span><%= @recipe.cooking_time %> minutes</span>
+        <div>
+          <span class="meta-label">Cooking</span>
+          <span>⏰: <%= @recipe.cooking_time %> minutes</span>
         </div>
         <div>
           <span>Public 👀: </span>
@@ -36,8 +36,8 @@
         </div>
       </header>
 
-      <div class="recipe-detail">
-        <h3>Description 📃: </h3>
+      <div class="recipe-description">
+        <h3>Description 📃 </h3>
         <p><%= @recipe.description %></p>
       </div>
 
@@ -56,7 +56,7 @@
 
     <section class="ingredient-table-container">
       <% if @ingredients.any? %>
-      <h3>Ingredients 🥗:</h3>
+      <h3>🥗 Ingredients</h3>
         <%= render 'table', ingredients: @ingredients %>
       <% else %>
         <h3>No foods added yet!</h3>

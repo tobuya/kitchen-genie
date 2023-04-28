@@ -8,8 +8,11 @@
             <%= link_to 'Back to Home', root_path, class: 'secondary-btn' %>
         </div>
     <% else %>
-    <%= link_to 'Add Food', new_food_path, class: 'btn-primary' %>
-    <table class="table">
+    <div class="food-btn-bar">
+        <%= link_to 'Add New Food', new_food_path, class: 'cta-btn' %>
+    </div>
+    <section class="responsive-table">
+    <table>
         <thead>
             <tr>
                 <th>Food</th>
@@ -35,12 +38,13 @@
                     <%= food.price %>
                 </td>
                 <td>
-                    <%= button_to 'Delete', food_path(food), method: :delete, data: { confirm: 'Are you sure want to delete this food?' }, class: 'warning-btn' %>
+                    <%= button_to 'Delete', food_path(food), method: :delete, data: { confirm: 'Are you sure want to delete this food?' }, class: 'table-action-btn' %>
                 </td>
               </tr>
             <% end %>
         </tbody>
     </table>
+    </section>
     <% end %>
 </section>
 <%= render 'public/footer' %>
