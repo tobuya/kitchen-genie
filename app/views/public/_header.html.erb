@@ -1,7 +1,13 @@
 <header class="main-header">
-  <nav>
-    <div>
+  <nav class="main-nav">
+    <div class="brand-bar">
       <h1><%= link_to "Kitchen Genie", root_path, class: "brand" %></h1>
+      <button id="toggle-nav-btn">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <rect width="24" height="24" fill="none" />
+          <path d="M1.5 12h21M1.5 6h21M1.5 18h21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
     </div>
     <ul class="nav-links">
       <li><%= link_to "Food List", foods_path, class: "link" %></li>
@@ -31,3 +37,11 @@
 <% if alert %>
     <div class="alert alert-danger"><%= alert %></div>
 <% end %>
+<script>
+  const toggleBtn = document.querySelector('#toggle-nav-btn');
+  const navMenu = document.querySelector('.nav-links');
+
+  toggleBtn.addEventListener("click", () => {
+    navMenu.classList.toggle('show');
+  });
+</script>
