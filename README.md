@@ -6,6 +6,7 @@
 - [👨‍🍳 Kitchen Genie - Recipe Share App](#-kitchen-genie---recipe-share-app)
   - [🧰 Tech Stack  ](#-tech-stack--)
   - [✨ Key Features  ](#-key-features--)
+  - [🚀 Live Demo](#-live-demo--)
   - [📘 Getting Started  ](#-getting-started--)
     - [📋 Prerequisites](#-prerequisites)
     - [📂 Setup](#-setup)
@@ -43,6 +44,10 @@
 - Sign up or log in to your account to access exclusive features
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+ [kitchen-genie](https://kitchen-genie.onrender.com/)
 
 ## 📘 Getting Started  <a name="getting-started"></a>
 
