@@ -9,11 +9,12 @@
     <%= link_to "Back to Home", root_path, class: "secondary-btn" %>
   </div>
 <% else %>
-  <table class="shopping-list-table">
-    <caption><%= pluralize(@food_types, 'Food Type') %> To Buy</caption>
+<section class="responsive-table">
+  <table>
     <thead>
       <tr>
-        <th>Food Item</th>
+        <th>Item</th>
+        <th>Food</th>
         <th>Quantity</th>
         <th>Unit</th>
         <th>Price</th>
@@ -21,25 +22,27 @@
       </tr>
     </thead>
     <tbody>
-      <% @shopping_list.each do |food_id, item| %>
+      <% @shopping_list.each_with_index do |(id, item), index| %>
         <% if item[:quantity] > 0 %>
           <tr>
+            <td><%= index + 1%></td>
             <td><%= item[:name] %></td>
             <td><%= item[:quantity] %></td>
             <td><%= item[:measurement_unit] %></td>
             <td><%= item[:price] %></td>
-            <td>$ <%= item[:value] %></td>
+            <td class="right">$ <%= item[:value] %></td>
           </tr>
         <% end %>
       <% end %>
     </tbody>
     <tfoot>
       <tr>
-        <td colspan="4"><strong>Total Value:</strong></td>
+        <td colspan="5"><strong>Total Value:</strong></td>
         <td>$ <%= @shopping_list.values.map { |i| i[:value] }.sum %></td>
       </tr>
     </tfoot>
   </table>
+  </section>
 <% end %>
 </section>
 <%= render 'public/footer' %>

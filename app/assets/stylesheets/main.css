@@ -176,3 +176,53 @@ body {
 .alert-danger {
   background-color: var(--danger);
 }
+
+/* Table design  */
+
+.responsive-table {
+  width: 95%;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.211);
+  overflow-x: auto;
+}
+
+.responsive-table table,
+th,
+td {
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.responsive-table table {
+  width: 100%;
+  background-color: #fff;
+}
+
+.responsive-table th {
+  background-color: var(--aqua);
+  font-size: 1.1em;
+  color: #fff;
+}
+
+.responsive-table tr:nth-child(even) {
+  background-color: var(--secondary);
+}
+
+.responsive-table tr:hover {
+  background-color: var(--light-blue);
+}
+
+.responsive-table td {
+  border: solid 1px #ccc;
+}
+
+.responsive-table td.right {
+  text-align: right;
+}
+
+.responsive-table tfoot td {
+  border-top: 1px solid #ddd;
+  font-weight: bold;
+  text-align: right;
+}

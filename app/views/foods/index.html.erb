@@ -9,7 +9,8 @@
         </div>
     <% else %>
     <%= link_to 'Add Food', new_food_path, class: 'btn-primary' %>
-    <table class="table">
+    <section class="responsive-table">
+    <table>
         <thead>
             <tr>
                 <th>Food</th>
@@ -41,6 +42,7 @@
             <% end %>
         </tbody>
     </table>
+    </section>
     <% end %>
 </section>
 <%= render 'public/footer' %>

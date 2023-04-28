@@ -1,20 +1,29 @@
-<table class="ingredient-table">
+<section class="responsive-table">
+<table>
     <thead>
         <tr>
+            <th>Item</th>
             <th>Food</th>
             <th>Quantity</th>
+            <th>Unit</th>
             <th>Value</th>
             <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-        <% ingredients.each do |i|%>
+        <% ingredients.each_with_index do |i, no|%>
         <tr>
+            <td>
+                <%= no + 1 %>
+            </td>
             <td>
                 <%= i.food.name %>
             </td>
             <td>
-                <%= i.quantity %> <%= i.food.measurement_unit %>
+                <%= i.quantity %>
+            </td>
+            <td>
+                 <%= i.food.measurement_unit %>
             </td>
             <td>
                 $ <%= i.quantity * i.food.price %>
@@ -33,3 +42,4 @@
         <% end %>
     </tbody>
 </table>
+</section>
