@@ -8,6 +8,7 @@
   min-height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
   background-color: var(--primary);
+  overflow: hidden;
 }
 
 .table,
@@ -71,7 +72,7 @@ td {
 
 .form-container {
   box-shadow: 0 5px 10px -5px #000;
-  width: 50vw;
+  min-width: 50vw;
   margin: 2rem auto;
   padding: 1.5rem;
   background-color: #fff;
@@ -112,7 +113,7 @@ td {
   margin: 0;
   text-align: center;
   height: 44px;
-  width: 10px;
+  width: 100%;
   outline: none;
   overflow: hidden;
   padding: 0.5rem 2rem;
@@ -129,7 +130,7 @@ td {
 
 .btn-cancel {
   height: 44px;
-  width: 10px;
+  width: 100%;
 }
 
 .form-label {
@@ -138,4 +139,11 @@ td {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .form-group {
+    grid-template-columns: 1fr;
+  }
 }

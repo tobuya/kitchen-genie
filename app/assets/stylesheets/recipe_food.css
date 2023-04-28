@@ -118,3 +118,10 @@
 .table-action-btn:hover {
   background-color: #0062cc;
 }
+
+@media (max-width: 768px) {
+  .recipe-food-card,
+  .recipe-food-card form {
+    flex-direction: column;
+  }
+}
