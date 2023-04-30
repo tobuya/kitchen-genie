@@ -38,7 +38,7 @@
     <tfoot>
       <tr>
         <td colspan="5"><strong>Total Value:</strong></td>
-        <td>$ <%= @shopping_list.values.map { |i| i[:value] }.sum %></td>
+        <td>$ <%= @shopping_list.values.map { |i| i[:value].positive? ? i[:value] : 0 }.sum %></td>
       </tr>
     </tfoot>
   </table>
